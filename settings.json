@@ -1,0 +1,13 @@
+{
+    "editor.fontSize": 15,
+    "editor.fontFamily": "Consolas",
+    "workbench.startupEditor": "newUntitledFile",
+    "C_Cpp.intelliSenseEngine": "Default",
+    "git.confirmSync": false,
+    "vsicons.dontShowNewVersionMessage": true,
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.colorTheme": "Dracula Soft",
+    "window.zoomLevel": 1,
+    "git.enableSmartCommit": true,
+    "workbench.activityBar.visible": false
+}
