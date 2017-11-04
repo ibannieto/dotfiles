@@ -15,6 +15,7 @@ alias ..='cd ..'
 alias ...='cd ../../'
 alias ax="chmod a+x"
 alias cp='cp -iv'
+alias dev="git config user.email 'iban.nieto@gmail.com' ; eval $(ssh-agent) ; ssh-add ~/.ssh/id_rsa"
 alias ff='find . -type f -iname'
 alias more="less"
 alias ll="ls -lh"
@@ -30,6 +31,7 @@ alias rms='shred -uz'
 alias rs='rsync -avz --progress --delete-after'
 alias tgz='tar -xvfz'
 alias tbz='tar -jxvf'
+alias zxf='tar -zxf'
 alias unrar='rar e'
 
 # Utils
