@@ -1,13 +1,27 @@
 {
-    "editor.fontSize": 15,
+    "editor.fontSize": 13,
     "editor.fontFamily": "Consolas",
-    "workbench.startupEditor": "newUntitledFile",
-    "C_Cpp.intelliSenseEngine": "Default",
-    "git.confirmSync": false,
-    "vsicons.dontShowNewVersionMessage": true,
-    "workbench.iconTheme": "vscode-icons",
-    "workbench.colorTheme": "Dracula Soft",
-    "window.zoomLevel": 1,
+    "editor.wordWrap": "on",
+    "files.eol": "\n",
+    "files.trimTrailingWhitespace": true,
+    "foodcritic.enable": true,
     "git.enableSmartCommit": true,
-    "workbench.activityBar.visible": false
+    "git.confirmSync": false,
+    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+    "terraform.formatOnSave": true,
+    "terraform.indexing": {
+        "enabled": true,
+        "indexerPath": "terraform-index",
+        "liveIndexing": true,
+        "delay": 500
+    },
+    "terraform.lintPath": "C:\\Program Files\\hashicorp\\tflint.exe",
+    "vsicons.dontShowNewVersionMessage": true,
+    "window.menuBarVisibility": "default",
+    "window.newWindowDimensions": "fullscreen",
+    "window.zoomLevel": 0,
+    "workbench.activityBar.visible": false,
+    "workbench.colorTheme": "Dracula Soft",
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.iconTheme": "vscode-icons"
 }
