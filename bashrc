@@ -15,7 +15,7 @@ alias ..='cd ..'
 alias ...='cd ../../'
 alias ax="chmod a+x"
 alias cp='cp -iv'
-alias dev="git config user.email 'iban.nieto@gmail.com' ; eval $(ssh-agent) ; ssh-add ~/.ssh/id_rsa"
+alias dev="eval $(ssh-agent) ; ssh-add ~/.ssh/id_rsa"
 alias ff='find . -type f -iname'
 alias more="less"
 alias ll="ls -lh"
@@ -50,14 +50,14 @@ alias port='netstat -tulanp'
 extract() {
     if [ -f $1 ] ; then
       case $1 in
-        *.tar.bz2)   tar xjf $1     ;;
-        *.tar.gz)    tar xzf $1     ;;
+        *.tar.bz2)   tar -xjf $1     ;;
+        *.tar.gz)    tar -xzf $1     ;;
         *.bz2)       bunzip2 $1     ;;
         *.rar)       unrar e $1     ;;
         *.gz)        gunzip $1      ;;
-        *.tar)       tar xf $1      ;;
-        *.tbz2)      tar xjf $1     ;;
-        *.tgz)       tar xzf $1     ;;
+        *.tar)       tar -xf $1      ;;
+        *.tbz2)      tar -xjf $1     ;;
+        *.tgz)       tar -xzf $1     ;;
         *.zip)       unzip $1       ;;
         *.Z)         uncompress $1  ;;
         *.7z)        7z x $1        ;;
@@ -154,7 +154,6 @@ complete -C 'aws_completer' aws
 # Kubernetes kubectl autocompleter
 source <(kubectl completion bash)
 
-
 # Terraform autocompleter
 _terraform()
 {
@@ -176,6 +175,27 @@ _terraform()
 } &&
 
 complete -F _terraform terraform
+
+# Serverless autocompleter
+_serverless()
+{
+   local cmds cur colonprefixes
+   cmds="config create deploy info install invoque logs metrics \
+      package plugin print remove rollback slstats emit run"
+
+   COMPREPLY=()
+   cur=${COMP_WORDS[COMP_CWORD]}
+   colonprefixes=${cur%"${cur##*:}"}
+   COMPREPLY=( $(compgen -W '$cmds'  -- $cur))
+   local i=${#COMPREPLY[*]}
+   while [ $((--i)) -ge 0 ]; do
+      COMPREPLY[$i]=${COMPREPLY[$i]#"$colonprefixes"}
+   done
+
+        return 0
+} &&
+
+complete -F _serverless serverless
 
 # Chef autocompleter
 _chef()
