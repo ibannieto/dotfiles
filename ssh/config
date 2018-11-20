@@ -1,0 +1,24 @@
+# CodeCommit
+Host git-codecommit.*.amazonaws.com
+  User
+  IdentityFile ~/.ssh/.pem
+
+# Github
+Host github.com
+  User git
+  HostName github.com
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh/id_rsa
+
+# Bitbucket
+Host bitbucket.org
+  User git
+  HostName bitbucket.org
+  Preferredauthentications publickey
+  IdentityFile ~/.ssh/id_rsa
+
+# GitLab
+Host gitlab.com
+  Preferredauthentications publickey
+  IdentityFile ~/.ssh/id_rsa
+

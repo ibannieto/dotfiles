@@ -1,0 +1,29 @@
+### Generic files to ignore
+*~
+*.lock
+*.swp
+*.out
+*.patch
+*.log
+*.sql
+*.sqlite
+
+### Windows junk files
+[Tt]humbs.db
+*.lnk
+
+### Patch/diff artifacts.
+*.patch
+*.diff
+*.orig
+
+### Other SCM
+.svn
+
+### emacs artifacts.
+*~
+\#*\#
+
+### VI swap file
+*.swp
+

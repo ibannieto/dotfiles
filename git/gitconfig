@@ -1,0 +1,63 @@
+[alias]
+  a = add
+  aa = add -A
+  ac = "!f() { curl $@ | git apply --index; }; f"
+  ac3 = "!f() { curl $@ | git apply -3 --index; }; f"
+  amend = commit --amend -C HEAD
+  ap = add -p
+  app = apply --index
+  br = branch
+  cb = checkout -b
+  cc = !git rh core && git co core && git clean -fd core
+  ci = commit
+  cim = commit -m
+  cl = clone
+  co = checkout
+  cp = cherry-pick
+  df = diff
+  dh = diff HEAD
+  dic = diff --cached
+  go = checkout
+  ol = log --oneline
+  p = format-patch --stdout
+  pg = "!f() { push origin $1:refs/for/$2; }; f"
+  pl = pull
+  plom = pull origin master
+  pom = push origin master
+  pomp = push origin master:preprod
+  poml = push origin master:prod
+  poa = push origin --all
+  rb = rebase
+  rh = reset HEAD
+  sl = stash list
+  sp = stash pop
+  ss = stash save
+  st = status
+
+  ignore = update-index --assume-unchanged
+  unignore = update-index --no-assume-unchanged
+  ignored = !git ls-files -v | grep '^h'
+
+  who = shortlog -sne
+  graph = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+[color]
+  ui = true
+[core]
+  autocrlf = false
+  safecrlf = false
+  ignorecase = false
+  excludesfile = ~/.gitignore
+[branch]
+  autosetuprebase = always
+[diff]
+  renames = copies
+  algorithm = patience
+[push]
+  default = simple
+[merge "theirs"]
+  driver = true
+[diff "nodiff"]
+	command = /bin/true
+[user]
+	email = 
+	name =

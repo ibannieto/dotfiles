@@ -1,0 +1,28 @@
+{
+    "editor.fontFamily": "Consolas",
+    "editor.fontSize": 14,
+    "editor.wordWrap": "on",
+    "explorer.confirmDragAndDrop": false,
+    "files.eol": "\n",
+    "files.trimTrailingWhitespace": true,
+    "foodcritic.enable": true,
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "git.enableSmartCommit": true,
+    "githubPullRequests.hosts": [
+        {
+            "host": "https://github.com",
+            "token": ""
+        }
+    ],
+    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+    "terraform.lintConfig": "C:\\Program Files\\HashicorpGoodies\\bin\\tflint.exe",
+    "vsicons.dontShowNewVersionMessage": true,
+    "window.restoreFullscreen": true,
+    "window.smoothScrollingWorkaround": true,
+    "window.zoomLevel": 0,
+    "workbench.activityBar.visible": true,
+    "workbench.colorTheme": "Dracula",
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.startupEditor": "newUntitledFile",
+}
