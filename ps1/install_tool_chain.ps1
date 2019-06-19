@@ -1,8 +1,9 @@
 # install tool chain
 
-$Packages = 'googlechrome', 'git', 'notepadplusplus', 'vscode', 'docker'
+$Packages = '7zip', 'awscli', 'conemu', 'coretemp', 'cpu-z', 'cue', 'curl', 'dep', 'docker-compose', 'docker-desktop', 'faas-cli', 'git', 'git-credential-manager-for-windows', 'github-desktop', 'golang', 'gpu-z', 'graphviz', 'greenshot', 'habitat', 'inspec', 'keepass', 'keepass-plugin-keeagent', 'keepass-plugin-keeanywhere', 'kubernetes-cli', 'kubernetes-helm', 'love', 'make', 'neovim', 'nodejs', 'qbittorrent', 'skaffold', 'slack', 'terraform', 'terragrunt', 'tflint', 'tiled', 'vlc', 'vlc-skins', 'vscode', 'vscode-docker', 'vscode-gitignore', 'vscode-icons', 'vscode-markdownlint', 'vscode-settingssync', 'vscode-yaml', 'zip'
 
 ForEach ($PackageName in $Packages)
 {
     choco install $PackageName -y
+
 }
