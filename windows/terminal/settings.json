@@ -34,9 +34,10 @@
         [
             {
                 "guid": "{abc00000-0000-0000-0000-000000000000}",
-                "name": "Git Bash",
+                "name": "Git-Bash",
                 "commandline": "%PROGRAMFILES%\\Git\\bin\\bash.exe",
                 "icon": "%PROGRAMFILES%\\Git\\mingw64\\share\\git\\git-for-windows.ico",
+                "fontFace": "Cascadia Code PL",
                 "startingDirectory" : "~"
              },
             {
@@ -44,6 +45,7 @@
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "name": "Windows PowerShell",
                 "commandline": "powershell.exe",
+                "fontFace": "Cascadia Code PL",
                 "hidden": false
             },
             {
