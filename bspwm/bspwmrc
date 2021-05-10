@@ -1,0 +1,65 @@
+#! /bin/sh
+
+#bspc monitor eDP1 -d I II III IV V VI VII VIII IX X
+bspc monitor eDP1 -d net term code chat other
+#bspc monitor HDMI2 -d I II III IV
+
+bspc config border_width         0
+bspc config window_gap          12
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+bspc config focus_follows_pointer true
+
+bspc rule -a Gimp desktop='^3' state=floating follow=on
+bspc rule -a Chromium desktop='^1'
+bspc rule -a mplayer2 state=floating
+bspc rule -a Kupfer.py focus=on
+bspc rule -a Screenkey manage=off
+bspc rule -a Code desktop='^3' state=floating
+bspc rule -a Rocket.Chat desktop='^4'
+bspc rule -a Discord desktop='^4'
+bspc rule -a Telegram desktop='^4' state=floating
+bspc rule -a Slack desktop='^4' state=floating
+
+# Autostart
+
+# Set window manager name (only for java apps)
+wmname LG3D
+
+# launch sxhkd
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+# background
+feh --bg-fill ~/Pictures/wallpapers/fu5RgsM.jpg &
+
+# polybar
+~/.config/polybar/launch.sh --cuts &
+
+# composite
+picom --config ~/.config/picom.conf &
+
+# dunst notifier
+dunst -conf ~/.config/dunst/dunstrc &
+
+# corsair
+/usr/bin/ckb-next --background &
+
+# input gestures
+/usr/bin/libinput-gestures &
+
+# keyring
+/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh &
+# export GNOME_KEYRING_CONTROL GNOME_KEYRING_PID GPG_AGENT SSH_AUTH_SOCK &
+
+# polkit
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+# xautolock1
+xautolock -time 10 -locker 'slimlock' &
+
+# mpd
+mpd &
+

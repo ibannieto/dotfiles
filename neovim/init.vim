@@ -20,6 +20,7 @@ Plug 'drewtempelmeyer/palenight.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 " Syntastic Config
@@ -84,7 +85,7 @@ nnoremap <silent> <leader>gu :Gread<CR>
 nnoremap <silent> <leader>gc :Gcommit<CR>
 nnoremap <leader>gp :Gina push<CR>
 
-let g:NERDTreeIndicatorMapCustom = {
+let g:NERDTreeGitStatusIndicatorMapCustom = {
     \ "Modified"  : "✹",
     \ "Staged"    : "✚",
     \ "Untracked" : "✭",
