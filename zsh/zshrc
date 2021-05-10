@@ -30,22 +30,9 @@ alias tbz='tar -jxvf'
 alias zxf='tar -zxf'
 alias unrar='rar e'
 alias vim="nvim"
+alias qiv="pqiv"
 
-# Utils
-md5check() { md5sum "$1" | grep "$2";}
-
-# Snippets to convert from DOS (CRLF) <-> UNIX (LF)
-dos2unix() { awk "{ sub(\"\r\$\", \"\"); print }" $1 > $2; }
-unix2dos() { awk "sub(\"\$\", \"\r\")" $1 > $2; }
-
-alias genpasswd="strings /dev/urandom | grep -o '[[:alnum:]]' | head -n 30 | tr -d '\n'; echo"
-alias meminfo='free -m -l -t'
-alias volume="amixer get Master | sed '1,4 d' | cut -d [ -f 2 | cut -d ] -f 1"
-alias listen="lsof -P -i -n"
-alias port='netstat -tulanp'
-
-# Kubernetes aliases
-# From https://ahmet.im/blog/kubectl-aliases/
+# Kubernetes aliases from https://ahmet.im/blog/kubectl-aliases/
 alias k='kubectl'
 alias kg='kubectl get'
 alias kgpo='kubectl get pods'
@@ -57,9 +44,6 @@ alias krmf='kubectl delete -f'
 alias krming='kubectl delete ingress'
 alias krmingl='kubectl delete ingress -l'
 alias krmingall='kubectl delete ingress --all-namespaces'
-
-# Kubernetes kubectl autocompleter
-# source <(kubectl completion zsh)
 
 # Docker aliases
 # Get latest container ID
@@ -109,17 +93,41 @@ dbash() { docker exec -it $(docker ps -aqf "name=$1") bash; }
 
 export ZSH="/home/iban/.oh-my-zsh"
 
-ZSH_THEME="agnoster"
+#ZSH_THEME="agnoster"
+
+ZSH_THEME="robbyrussell"
 
 plugins=(
+  aws
+  docker-compose
+  docker
   git
+  github
+  golang
+  helm
+  kops
+  kubectl
+  minikube
+  nmap
+  node
+  npm
+#  ssh-agent
+  systemd
+  terraform
+  tmux
+  vscode
 )
 
 source $ZSH/oh-my-zsh.sh
 
-powerline-daemon -q
-. /usr/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh
-
+export XDG_CONFIG_HOME="$HOME/.config"
 export GOPATH=$HOME/go
-export PATH=$PATH:$(go env GOPATH)/bin
+#export PATH=$PATH:$(go env GOPATH)/bin
+export PATH="$PATH":"$HOME/.pub-cache/bin":/opt/go/bin
+
+#source '/opt/kube-ps1/kube-ps1.sh'
+#PROMPT='$(kube_ps1)'$PROMPT
+
+alias chromium="chromium --password-store=gnome"
+eval "$(starship init zsh)"
 
